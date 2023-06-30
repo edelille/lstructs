@@ -1,8 +1,8 @@
 package lstructs
 
 type Queue[T any] struct {
-	length int
-	data   []T
+	Length int
+	Data   []T
 }
 
 func NewQueue[T any]() *Queue[T] {
@@ -10,31 +10,31 @@ func NewQueue[T any]() *Queue[T] {
 }
 
 func (q *Queue[T]) Enqueue(x T) {
-	q.length++
-	q.data = append(q.data, x)
+	q.Length++
+	q.Data = append(q.Data, x)
 }
 
 func (q *Queue[T]) Dequeue() T {
 	var x T
-	if len(q.data) > 0 {
-		q.length--
-		x, q.data = q.data[0], q.data[1:]
+	if len(q.Data) > 0 {
+		q.Length--
+		x, q.Data = q.Data[0], q.Data[1:]
 	}
 	return x
 }
 
 func (q *Queue[T]) Peek() T {
 	var x T
-	if len(q.data) > 0 {
-		x = q.data[0]
+	if len(q.Data) > 0 {
+		x = q.Data[0]
 	}
 	return x
 }
 
-func (q *Queue[T]) isEmpty() bool {
-	return len(q.data) == 0
+func (q *Queue[T]) IsEmpty() bool {
+	return len(q.Data) == 0
 }
 
 func (q *Queue[T]) Size() int {
-	return q.length
+	return q.Length
 }

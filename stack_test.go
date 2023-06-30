@@ -12,7 +12,7 @@ func TestEmptyStack(t *testing.T) {
 	}
 }
 
-func TestPushPop(t *testing.T) {
+func TestPushPopStack(t *testing.T) {
 	testAmt := 100
 	funcName := "Stack.Push() or Stack.Pop()"
 	x := NewStack[int]()
@@ -27,7 +27,7 @@ func TestPushPop(t *testing.T) {
 	}
 }
 
-func TestPeek(t *testing.T) {
+func TestPeekStack(t *testing.T) {
 	funcName := "Stack.Peek()"
 	x := NewStack[int]()
 	if x.Peek() != 0 {
