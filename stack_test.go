@@ -38,3 +38,20 @@ func TestPeek(t *testing.T) {
 		t.Fatalf("[func: %s] is not performing as expected; failed after pushing\n", funcName)
 	}
 }
+
+func TestLength(t *testing.T) {
+	testAmt := 100
+	funcName := "Stack.Size()"
+	x := NewStack[int]()
+
+	if x.Size() != 0 {
+		t.Fatalf("[func: %s] is not performing as expected; failed on empty\n", funcName)
+	}
+
+	for i := 1; i < testAmt; i++ {
+		x.Push(i)
+		if x.Size() != i {
+			t.Fatalf("[func: %s] is not performing as expected; failed size: %d\n", funcName, i)
+		}
+	}
+}
