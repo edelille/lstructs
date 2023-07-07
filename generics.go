@@ -15,3 +15,9 @@ func Equals[T comparable](x, y T) bool {
 func Less[T constraints.Ordered](x, y T) bool {
 	return x < y
 }
+
+func Swap[T any](arr []T, i, j int) {
+	tmp := arr[i]
+	arr[i] = arr[j]
+	arr[j] = tmp
+}
